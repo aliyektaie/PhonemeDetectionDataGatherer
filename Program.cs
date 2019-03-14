@@ -1,19 +1,21 @@
-﻿using SpeechMorphingDataGatherer.Core.Database;
+﻿using System;
+using System.Windows.Forms;
+using SpeechMorphingDataGatherer.Core.Database;
+using SpeechMorphingDataGatherer.Core.Providers;
+using SpeechMorphingDataGatherer.Views;
 
 namespace SpeechMorphingDataGatherer
 {
     internal class Program
     {
+        [STAThread]
         public static void Main(string[] args)
         {
-            TrainingDataset ds = new TrainingDataset(@"D:\My Projects\Speech Morphing Data Gatherer\Data\");
-            TrainingEntry entry = ds.GetEntry("test");
+            Application.EnableVisualStyles();
+            FrmDownloadTrainingData frm = new FrmDownloadTrainingData();
 
-            entry.Phonetics = "/test/";
-            entry.AddAudio(@"d:\test0001.mp3", "Merriam-Webster");
-            
-            ds.Save();
-
+            frm.Provider = new MerriamWebsterProvider();
+            frm.ShowDialog();
         }
     }
 }

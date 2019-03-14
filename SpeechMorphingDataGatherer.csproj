@@ -38,19 +38,88 @@
     <Reference Include="System.Data.SQLite, Version=1.0.109.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139">
       <HintPath>Lib\System.Data.SQLite.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Constants.cs" />
     <Compile Include="Core\Database\TrainingDataset.cs" />
     <Compile Include="Core\FFMPEG.cs" />
+    <Compile Include="Core\Providers\MerriamWebsterProvider.cs" />
+    <Compile Include="Core\TrainingSetProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FrmDownloadTrainingData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FrmDownloadTrainingData.Designer.cs">
+      <DependentUpon>FrmDownloadTrainingData.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\index.sqlite">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\FrmDownloadTrainingData.resx">
+      <DependentUpon>FrmDownloadTrainingData.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\az-0.xml" />
+    <Content Include="Resources\az-1.xml" />
+    <Content Include="Resources\az-10.xml" />
+    <Content Include="Resources\az-11.xml" />
+    <Content Include="Resources\az-12.xml" />
+    <Content Include="Resources\az-13.xml" />
+    <Content Include="Resources\az-14.xml" />
+    <Content Include="Resources\az-15.xml" />
+    <Content Include="Resources\az-16.xml" />
+    <Content Include="Resources\az-17.xml" />
+    <Content Include="Resources\az-18.xml" />
+    <Content Include="Resources\az-19.xml" />
+    <Content Include="Resources\az-2.xml" />
+    <Content Include="Resources\az-20.xml" />
+    <Content Include="Resources\az-21.xml" />
+    <Content Include="Resources\az-22.xml" />
+    <Content Include="Resources\az-23.xml" />
+    <Content Include="Resources\az-24.xml" />
+    <Content Include="Resources\az-25.xml" />
+    <Content Include="Resources\az-26.xml" />
+    <Content Include="Resources\az-27.xml" />
+    <Content Include="Resources\az-28.xml" />
+    <Content Include="Resources\az-29.xml" />
+    <Content Include="Resources\az-3.xml" />
+    <Content Include="Resources\az-30.xml" />
+    <Content Include="Resources\az-31.xml" />
+    <Content Include="Resources\az-32.xml" />
+    <Content Include="Resources\az-33.xml" />
+    <Content Include="Resources\az-34.xml" />
+    <Content Include="Resources\az-35.xml" />
+    <Content Include="Resources\az-36.xml" />
+    <Content Include="Resources\az-37.xml" />
+    <Content Include="Resources\az-38.xml" />
+    <Content Include="Resources\az-39.xml" />
+    <Content Include="Resources\az-4.xml" />
+    <Content Include="Resources\az-40.xml" />
+    <Content Include="Resources\az-41.xml" />
+    <Content Include="Resources\az-42.xml" />
+    <Content Include="Resources\az-43.xml" />
+    <Content Include="Resources\az-44.xml" />
+    <Content Include="Resources\az-45.xml" />
+    <Content Include="Resources\az-46.xml" />
+    <Content Include="Resources\az-47.xml" />
+    <Content Include="Resources\az-48.xml" />
+    <Content Include="Resources\az-49.xml" />
+    <Content Include="Resources\az-5.xml" />
+    <Content Include="Resources\az-50.xml" />
+    <Content Include="Resources\az-51.xml" />
+    <Content Include="Resources\az-6.xml" />
+    <Content Include="Resources\az-7.xml" />
+    <Content Include="Resources\az-8.xml" />
+    <Content Include="Resources\az-9.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

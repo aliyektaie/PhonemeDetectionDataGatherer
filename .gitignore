@@ -1,3 +1,5 @@
 SpeechMorphingDataGatherer.sln.DotSettings.user
 Data/
 Exe/
+bin/
+obj/
