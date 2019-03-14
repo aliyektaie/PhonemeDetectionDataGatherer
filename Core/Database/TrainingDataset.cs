@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.IO;
+using System.Net;
 
 namespace SpeechMorphingDataGatherer.Core.Database
 {
@@ -45,7 +46,7 @@ namespace SpeechMorphingDataGatherer.Core.Database
         {
             SQLiteCommand command = new SQLiteCommand("SELECT * FROM audio_files", _connection);
             SQLiteDataReader reader = command.ExecuteReader();
-            String baseAudioDirectory = Path + AUDIO_FILE_FOLDER_NAME + @"\";
+            String baseAudioDirectory = GetAudioDirectory();
 
             while (reader.Read())
             {
@@ -63,6 +64,11 @@ namespace SpeechMorphingDataGatherer.Core.Database
             }
 
             reader.Close();
+        }
+
+        private string GetAudioDirectory()
+        {
+            return Path + AUDIO_FILE_FOLDER_NAME + @"\";
         }
 
         private void LoadTrainingEntries()
@@ -96,7 +102,8 @@ namespace SpeechMorphingDataGatherer.Core.Database
         {
             Directory.CreateDirectory(Path);
             Directory.CreateDirectory(Path + AUDIO_FILE_FOLDER_NAME);
-            File.Create(Path + INDEX_FILE_NAME);
+            
+            File.WriteAllBytes(Path + INDEX_FILE_NAME, File.ReadAllBytes("Resources\\index.sqlite"));
 
             OpenConnection();
 
@@ -134,12 +141,15 @@ namespace SpeechMorphingDataGatherer.Core.Database
                     // Nothing to update, this should not happen.
                 }
 
+                int audioIndex = 0;
                 foreach (TrainingAudioFile file in entry.AudioFiles)
                 {
-                    if (file.ID != 0)
+                    if (file.ID == 0)
                     {
-                        SaveNewAudioFile(file, entry);
+                        SaveNewAudioFile(file, entry, audioIndex);
                     }
+
+                    audioIndex++;
                 }
 
                 i++;
@@ -151,19 +161,36 @@ namespace SpeechMorphingDataGatherer.Core.Database
             }
         }
 
-        private void SaveNewAudioFile(TrainingAudioFile file, TrainingEntry entry)
+        private void SaveNewAudioFile(TrainingAudioFile file, TrainingEntry entry, int index)
         {
             SQLiteCommand command = new SQLiteCommand();
-            command.CommandText = $"INSERT INTO audio_files(file_name, format, sampling_rate, entry_id, provider) VALUES(@file_name, {(int)file.AudioFormat}, {file.AudioSamplingRate}, {entry.ID}, @provider)";
+            command.CommandText = $"INSERT INTO audio_files(file_name, format, sampling_rate, bit_rate, entry_id, provider) VALUES(@file_name, {(int)file.AudioFormat}, {file.AudioSamplingRate}, {file.AudioBitrateInKB}, {entry.ID}, @provider)";
             command.Connection = _connection;
 
-            String fileName = System.IO.Path.GetFileName(file.FilePath);
+            String fileName = $"{entry.ID}_{index}.{GetExtension(file.AudioFormat)}";
             command.Parameters.AddWithValue("@file_name", fileName);
             command.Parameters.AddWithValue("@provider", file.Provider);
 
             command.ExecuteNonQuery();
+            
+            File.WriteAllBytes(GetAudioDirectory() + fileName, file.RawContent);
 
             file.ID = -1;
+        }
+
+        private String GetExtension(AudioFormat format)
+        {
+            switch (format)
+            {
+                case AudioFormat.MP3:
+                    return "mp3";
+                case AudioFormat.Wave:
+                    return "wav";
+                case AudioFormat.Ogg:
+                    return "ogg";
+            }
+            
+            throw new NotImplementedException();
         }
 
         private void SaveNewTrainingEntry(TrainingEntry entry)
@@ -198,6 +225,7 @@ namespace SpeechMorphingDataGatherer.Core.Database
 
             entry.Word = word;
             _entriesWordIndex.Add(word, entry);
+            _content.Add(entry);
 
             return entry;
         }
@@ -205,6 +233,11 @@ namespace SpeechMorphingDataGatherer.Core.Database
 
     public class TrainingEntry
     {
+        public TrainingEntry()
+        {
+            AudioFiles = new List<TrainingAudioFile>();
+        }
+        
         public int ID { get; set; }
 
         public String Word { get; set; }
@@ -212,6 +245,21 @@ namespace SpeechMorphingDataGatherer.Core.Database
         public String Phonetics { get; set; }
 
         public List<TrainingAudioFile> AudioFiles { get; set; }
+
+        public void AddAudio(String path, String provider)
+        {
+            TrainingAudioFile file = new TrainingAudioFile();
+
+            file.RawContent = File.ReadAllBytes(path);
+            file.Provider = provider;
+
+            FFMPEGFileInfo info = FFMPEG.GetFileInfo(path);
+            file.AudioFormat = info.Format;
+            file.AudioSamplingRate = info.SamplingRate;
+            file.AudioBitrateInKB = (int) info.BitRate;
+
+            AudioFiles.Add(file);
+        }
     }
 
     public class TrainingAudioFile
