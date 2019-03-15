@@ -3,3 +3,7 @@ Data/
 Exe/
 bin/
 obj/
+
+.idea/.idea.SpeechMorphingDataGatherer/.idea/.name
+.idea/.idea.SpeechMorphingDataGatherer/.idea/contentModel.xml
+.vs/

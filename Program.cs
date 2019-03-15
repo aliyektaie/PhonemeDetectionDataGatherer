@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using SpeechMorphingDataGatherer.Core.Database;
 using SpeechMorphingDataGatherer.Core.Providers;
 using SpeechMorphingDataGatherer.Views;
+using System.Net;
 
 namespace SpeechMorphingDataGatherer
 {
@@ -11,6 +12,8 @@ namespace SpeechMorphingDataGatherer
         [STAThread]
         public static void Main(string[] args)
         {
+            ServicePointManager.DefaultConnectionLimit = 40;
+
             Application.EnableVisualStyles();
             FrmDownloadTrainingData frm = new FrmDownloadTrainingData();
 

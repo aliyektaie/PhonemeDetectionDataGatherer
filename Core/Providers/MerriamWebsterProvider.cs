@@ -21,32 +21,38 @@ namespace SpeechMorphingDataGatherer.Core.Providers
             
         }
 
-        public override event Action<double> OnLoadProgress;
-
         protected override void Load()
         {
             List<String> urls = LoadURLs();
+            List<ThreadStart> list = new List<ThreadStart>();
 
             for (int i = 0; i < urls.Count; i++)
             {
-                WaitPaused();
-                if (i % 200 == 0)
+                String url = urls[i];
+                ThreadStart t = new ThreadStart(() =>
                 {
-                    double p = i * 100.0 / urls.Count;
-                    if (OnLoadProgress != null)
-                    {
-                        OnLoadProgress(p);
-                        ds.Save();
-                    }
-                }
+                    WaitPaused();
+                    DownloadData(url);
+                });
 
-                DownloadData(urls[i]);
+                list.Add(t);
             }
+
+            ExecuteSubTasks(list, 20);
+
+            ds.OnSaveProgress += OnSaveProgress;
             ds.Save();
         }
-        
+
+        private void OnSaveProgress(double obj)
+        {
+            base.RaiseOnLoadProgress(obj);
+        }
+
+        private int totalCount = 0;
         private void DownloadData(string url)
         {
+            WebClient client = new WebClient();
             try
             {
                 String html = Encoding.UTF8.GetString(client.DownloadData(url));
@@ -54,24 +60,37 @@ namespace SpeechMorphingDataGatherer.Core.Providers
 
                 if (audioURL != null)
                 {
-                    client.DownloadFile(audioURL, @"d:\temp.mp3");
+                    String path = @"d:\" + Convert.ToBase64String(Encoding.ASCII.GetBytes(audioURL)).Replace("=", "").Replace("/", "").Replace("\\", "") + ".mp3";
+                    client.DownloadFile(audioURL, path);
                     String word = GetWord(html);
                     String phonetics = GetPhonetics(html).Trim();
 
                     if (!phonetics.StartsWith("<html"))
                     {
-                        TrainingEntry entry = ds.GetEntry(word);
+                        TrainingEntry entry = null;
+
+                        lock (this)
+                        {
+                            entry = ds.GetEntry(word);
+                        }
+
                         entry.Word = word;
                         entry.Phonetics = phonetics;
-                        entry.AddAudio(@"d:\temp.mp3", "Merriam-Webster@" + url);
+                        entry.AddAudio(path, "Merriam-Webster@" + url);
                     }
 
-                    File.Delete(@"d:\temp.mp3");
+                    lock(this)
+                    {
+                        totalCount++;
+                    }
+                    Console.WriteLine(totalCount);
+
+                    File.Delete(path);
                 }
             }
             catch (Exception ex)
             {
-                
+                int h = 0;
             }
         }
 
