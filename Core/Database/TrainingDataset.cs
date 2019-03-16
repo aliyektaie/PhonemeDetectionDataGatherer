@@ -159,6 +159,8 @@ namespace SpeechMorphingDataGatherer.Core.Database
                     OnSaveProgress(p);
                 }
             }
+
+            int h = 0;
         }
 
         private void SaveNewAudioFile(TrainingAudioFile file, TrainingEntry entry, int index)
