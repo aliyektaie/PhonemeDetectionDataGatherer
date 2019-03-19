@@ -160,7 +160,7 @@ namespace SpeechMorphingDataGatherer.Core.Database
                 }
             }
 
-            int h = 0;
+            Console.WriteLine("Finished");
         }
 
         private void SaveNewAudioFile(TrainingAudioFile file, TrainingEntry entry, int index)
