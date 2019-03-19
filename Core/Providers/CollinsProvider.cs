@@ -8,13 +8,13 @@ using SpeechMorphingDataGatherer.Core.Database;
 
 namespace SpeechMorphingDataGatherer.Core.Providers
 {
-    public class LongmanProvider : TrainingSetProvider
+    public class CollinsProvider : TrainingSetProvider
     {
         private WebClient client = new WebClient();
 
-        public LongmanProvider()
+        public CollinsProvider()
         {
-            Title = "Longman Training Set Provider";
+            Title = "Collins Training Set Provider";
             ds = new TrainingDataset(@"D:\My Projects\Speech Morphing Data Gatherer\Data\");
         }
 
@@ -61,9 +61,9 @@ namespace SpeechMorphingDataGatherer.Core.Providers
                     String path = @"d:\" + Convert.ToBase64String(Encoding.ASCII.GetBytes(audioURL)).Replace("=", "")
                                       .Replace("/", "").Replace("\\", "") + ".mp3";
                     String word = GetWord(html);
-                    String phonetics = GetPhonetics(html).Trim();
+                    String phonetics = GetPhonetics(html);
 
-                    if (phonetics != null)
+                    if (phonetics != null && word != null)
                     {
                         client.DownloadFile(audioURL, path);
                         TrainingEntry entry = null;
@@ -75,7 +75,7 @@ namespace SpeechMorphingDataGatherer.Core.Providers
 
                         entry.Word = word;
                         entry.Phonetics = phonetics;
-                        entry.AddAudio(path, "Longman@" + url);
+                        entry.AddAudio(path, "Collins@" + url);
 
                         lock (this)
                         {
@@ -85,7 +85,6 @@ namespace SpeechMorphingDataGatherer.Core.Providers
                         Console.WriteLine(totalCount);
                         File.Delete(path);
                     }
-
                 }
             }
             catch (Exception ex)
@@ -96,13 +95,12 @@ namespace SpeechMorphingDataGatherer.Core.Providers
 
         private static string GetAudioURL(String html)
         {
-            if (!html.Contains("Play American pronunciation") && !html.Contains("data-src-mp3"))
+            if (!html.Contains("data-src-mp3"))
             {
                 return null;
             }
 
-            int index = html.IndexOf("Play American pronunciation");
-            String result = html.Substring(html.LastIndexOf("data-src-mp3", index));
+            String result = html.Substring(html.IndexOf("data-src-mp3"));
             result = result.Substring(result.IndexOf("\"") + 1);
             result = result.Substring(0, result.IndexOf("\""));
 
@@ -127,49 +125,39 @@ namespace SpeechMorphingDataGatherer.Core.Providers
 
         private string GetPhonetics(string html)
         {
-            String start = "<span class=\"neutral span\">";
+            String start = "<span class=\"pron type";
             String result = null;
 
             if (html.Contains(start))
             {
-                result = html.Substring(html.IndexOf(start) + start.Length);
-                if (result.Contains(start))
+                result = html.Substring(html.IndexOf(start));
+                result = result.Substring(0, result.IndexOf("<span class=\"span\">)"));
+                StringBuilder f = new StringBuilder();
+                bool isInTag = false;
+
+                for (int i = 0; i < result.Length; i++)
                 {
-                    result = result.Substring(0, result.IndexOf(start));
-                    StringBuilder f = new StringBuilder();
-                    bool isInTag = false;
+                    char c = result[i];
 
-                    for (int i = 0; i < result.Length; i++)
+                    if (c == '<')
                     {
-                        char c = result[i];
-
-                        if (c == '<')
-                        {
-                            isInTag = true;
-                        } else if (c == '>')
-                        {
-                            isInTag = false;
-                        }
-                        else if (!isInTag)
-                        {
-                            f.Append(c);
-                        }
+                        isInTag = true;
                     }
-
-                    result = f.ToString().Trim();
-                    if (!result.StartsWith("/"))
+                    else if (c == '>')
                     {
-                        result = null;
+                        isInTag = false;
                     }
-                    else
+                    else if (!isInTag)
                     {
-                        result = result.Substring(1);
+                        f.Append(c);
                     }
                 }
-                else
-                {
-                    result = null;
-                }
+
+                result = f.ToString().Trim();
+            }
+            else
+            {
+                result = null;
             }
 
             if (result == "")
@@ -182,9 +170,19 @@ namespace SpeechMorphingDataGatherer.Core.Providers
 
         private string GetWord(string html)
         {
-            String title = html.Substring(html.IndexOf("<title"));
-            title = title.Substring(title.IndexOf(">") + 1);
-            title = title.Substring(0, title.IndexOf("|"));
+            if (!html.Contains("<h1 class=\"entry_title\">"))
+            {
+                return null;
+            }
+
+            String title = html.Substring(html.IndexOf("<h1 class=\"entry_title\">"));
+            title = title.Substring(title.IndexOf("'") + 1);
+            title = title.Substring(0, title.IndexOf("'"));
+
+            if (title.Contains("<"))
+            {
+                return null;
+            }
 
             return title.Trim();
         }
@@ -193,20 +191,22 @@ namespace SpeechMorphingDataGatherer.Core.Providers
         {
             List<String> result = new List<String>();
 
-            for (int i = 1; i <= 3; i++)
+            for (int i = 1; i <= 7; i++)
             {
-                String url = $"https://www.ldoceonline.com/sitemap/english/sitemap{i}.xml";
+                String url = $"https://www.collinsdictionary.com/sitemap/english/sitemap{i}.xml";
                 result.AddRange(GetURLsFrom(url));
             }
 
-//            result = FilterCount(result, 2000);
+            // result = FilterCount(result, 2000);
 
             return result;
         }
-        
+
         private List<String> GetURLsFrom(String siteMapURL)
         {
+            Console.WriteLine("Loading: " + siteMapURL);
             String xml = client.DownloadString(siteMapURL);
+            Console.WriteLine("   -> Done");
             List<String> result = new List<String>();
 
             String[] parts = xml.Split(new String[] {"<loc>"}, StringSplitOptions.RemoveEmptyEntries);
