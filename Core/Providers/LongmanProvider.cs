@@ -199,7 +199,7 @@ namespace SpeechMorphingDataGatherer.Core.Providers
                 result.AddRange(GetURLsFrom(url));
             }
 
-            result = FilterCount(result, 2000);
+//            result = FilterCount(result, 2000);
 
             return result;
         }
