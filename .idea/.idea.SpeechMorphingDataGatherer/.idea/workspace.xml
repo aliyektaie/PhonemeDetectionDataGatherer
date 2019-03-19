@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d9b8dfb-7675-40c1-9db4-db25895c36a2" name="Default Changelist" comment="">
+    <list default="true" id="7d9b8dfb-7675-40c1-9db4-db25895c36a2" name="Default Changelist" comment="Finalized Merriam-Webster provider.">
+      <change afterPath="$PROJECT_DIR$/Core/Providers/LongmanProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.SpeechMorphingDataGatherer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.SpeechMorphingDataGatherer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/TrainingSetProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Core/TrainingSetProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpeechMorphingDataGatherer.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/SpeechMorphingDataGatherer.csproj" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,64 +19,125 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Core/TrainingSetProvider.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="313">
-              <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+            <state relative-caret-position="490">
+              <caret line="145" column="26" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
               <folding>
-                <marker date="1552605499518" expanded="true" signature="6:85" ph="..." />
-                <marker date="1552605499518" expanded="true" signature="128:925" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="176:923" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="325:379" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="407:461" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="490:565" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="635:682" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="712:760" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="805:916" ph="{...}" />
-                <marker date="1552605499518" expanded="true" signature="842:906" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="49">
-              <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-              <folding>
-                <marker date="1552606145513" expanded="true" signature="6:242" ph="..." />
-                <marker date="1552606145513" expanded="true" signature="295:4850" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="359:4848" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="458:644" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="746:1276" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="850:1243" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="928:1189" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="1049:1171" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="1331:2258" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="1357:2170" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="1544:2156" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="1801:2088" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="2203:2248" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="2314:2926" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="2592:2649" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="2995:3319" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="3082:3281" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="3138:3267" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="3369:3611" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="3656:3868" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="3909:4222" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="4016:4184" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="4271:4842" ph="{...}" />
-                <marker date="1552606145513" expanded="true" signature="4641:4804" ph="{...}" />
+                <marker date="1553014350422" expanded="false" signature="6:119" ph="..." />
+                <marker date="1553014350422" expanded="true" signature="162:3977" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="210:3736" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="350:404" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="432:486" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="515:590" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="660:707" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="737:785" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="830:941" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="867:931" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="1023:2116" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="1167:1255" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="1306:1396" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="1575:1929" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="1976:2106" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="2172:2225" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="2288:2522" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="2386:2464" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="2576:2874" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="2731:2822" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="2920:3335" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="3066:3207" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="3417:3729" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="3523:3691" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="3614:3677" ph="{...}" />
+                <marker date="1553014350422" expanded="true" signature="3760:3975" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/79/4829a9b7/WebClient.cs">
+        <entry file="file://$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="1133" column="6" selection-start-line="1133" selection-start-column="6" selection-end-line="1133" selection-end-column="6" />
+            <state relative-caret-position="3504">
+              <caret line="174" selection-start-line="14" selection-end-line="174" />
+              <folding>
+                <marker date="1552677469928" expanded="false" signature="6:242" ph="..." />
+                <marker date="1552677469928" expanded="true" signature="295:5436" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="359:5434" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="458:644" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="684:1234" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="850:1111" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="956:1065" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="1283:1346" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="1429:2844" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="1503:2746" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="1690:2732" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="2100:2509" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="2779:2834" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="2900:3512" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="3178:3235" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="3581:3905" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="3668:3867" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="3724:3853" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="3955:4197" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="4242:4454" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="4495:4808" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="4602:4770" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="4857:5428" ph="{...}" />
+                <marker date="1552677469928" expanded="true" signature="5227:5390" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Core/Providers/LongmanProvider.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="176" column="30" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
+              <folding>
+                <marker date="1553015321726" expanded="false" signature="6:173" ph="..." />
+                <marker date="1553015321726" expanded="true" signature="226:6580" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="283:6578" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="375:541" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="581:1131" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="747:1008" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="853:962" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="1180:1243" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="1327:2782" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="1401:2684" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="1588:2670" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="2024:2612" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="2717:2772" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="2838:3324" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="2945:3002" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="3393:3717" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="3480:3679" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="3536:3665" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="3767:5331" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="3910:5203" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4045:5097" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4298:4773" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4403:4499" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4518:4615" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4658:4751" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4873:4956" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="4981:5079" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="5118:5189" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="5234:5293" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="5376:5618" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="5659:6023" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="5765:5936" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="6092:6572" ph="{...}" />
+                <marker date="1553015321726" expanded="true" signature="6371:6534" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6950CCCF-CBA1-4361-A8EB-C50FB013CF48/dd/8c90946c/WebClient.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="9624">
+              <caret line="411" column="10" selection-start-line="411" selection-start-column="10" selection-end-line="411" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -91,17 +155,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Core/Constants.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/TrainingSetProvider.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/79/4829a9b7/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/FFMPEG.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/../Lynda Server Command Line/LyndaCommandLine/LyndaCommandLine/Core/Constants.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Views/FrmDownloadTrainingData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/316C625F-7AA2-40C7-8AB7-D042CA01564F/4a/c4399be4/SQLiteCommand.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Core/Database/TrainingDataset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/7a/a40548ee/GZipStream.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/../Lynda Server Command Line/LyndaCommandLine/LyndaCommandLine/Core/Constants.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Database/TrainingDataset.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Providers/LongmanProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/01/bfb374df/SecurityProtocolType.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/FFMPEG.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/TrainingSetProvider.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6950CCCF-CBA1-4361-A8EB-C50FB013CF48/dd/8c90946c/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Core/Constants.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/79/4829a9b7/WebClient.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -112,14 +179,15 @@
         <option value="$PROJECT_DIR$/Core/Database/Resources.Designer.cs" />
         <option value="$PROJECT_DIR$/Core/Database/TrainingDataset.cs" />
         <option value="$PROJECT_DIR$/Core/TrainnigSetProvider.cs" />
-        <option value="$PROJECT_DIR$/Program.cs" />
         <option value="$PROJECT_DIR$/Views/FrmDownloadTrainingData.cs" />
-        <option value="$PROJECT_DIR$/Core/TrainingSetProvider.cs" />
         <option value="$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs" />
+        <option value="$PROJECT_DIR$/Program.cs" />
+        <option value="$PROJECT_DIR$/Core/TrainingSetProvider.cs" />
+        <option value="$PROJECT_DIR$/Core/Providers/LongmanProvider.cs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="260" />
     <option name="y" value="80" />
     <option name="width" value="1400" />
@@ -140,30 +208,6 @@
             <path>
               <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
               <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Core" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Core" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Providers" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="SpeechMorphingDataGatherer" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="Views" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -230,6 +274,8 @@
       <workItem from="1552598112474" duration="150000" />
       <workItem from="1552598366111" duration="640000" />
       <workItem from="1552599336927" duration="5574000" />
+      <workItem from="1553012441242" duration="1364000" />
+      <workItem from="1553013848930" duration="1459000" />
     </task>
     <task id="LOCAL-00001" summary="Start implementing training set.">
       <created>1552588529969</created>
@@ -259,11 +305,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552605745026</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finalized Merriam-Webster provider.">
+      <created>1553012458007</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1553012458007</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13077000" />
+    <option name="totallyTimeSpent" value="15900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -276,8 +329,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14872068" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Capture Tool" order="3" />
@@ -289,7 +343,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="NuGet" order="7" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32981783" />
       <window_info anchor="bottom" id="Performance Profiler" order="8" />
       <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" />
@@ -321,7 +375,8 @@
     <MESSAGE value="Added training set wrapper class." />
     <MESSAGE value="Training wrapper debugged." />
     <MESSAGE value="Added Merriam-Webster provider." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Merriam-Webster provider." />
+    <MESSAGE value="Finalized Merriam-Webster provider." />
+    <option name="LAST_COMMIT_MESSAGE" value="Finalized Merriam-Webster provider." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -347,18 +402,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Resources/az-12.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/az-13.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/az-14.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Resources/az-15.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Resources/az-16.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -491,61 +534,147 @@
     <entry file="file://$PROJECT_DIR$/Resources/az-9.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/79/4829a9b7/WebClient.cs">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/01/bfb374df/SecurityProtocolType.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="1133" column="6" selection-start-line="1133" selection-start-column="6" selection-end-line="1133" selection-end-column="6" />
+        <state relative-caret-position="240">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core/TrainingSetProvider.cs">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CC041687-319D-4208-AA1C-08D0759242BC/79/4829a9b7/WebClient.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="40" column="18" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+        <state relative-caret-position="104">
+          <caret line="388" column="19" selection-start-line="388" selection-start-column="19" selection-end-line="388" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="23" column="1" lean-forward="true" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
           <folding>
-            <marker date="1552605499518" expanded="true" signature="6:85" ph="..." />
-            <marker date="1552605499518" expanded="true" signature="128:925" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="176:923" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="325:379" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="407:461" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="490:565" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="635:682" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="712:760" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="805:916" ph="{...}" />
-            <marker date="1552605499518" expanded="true" signature="842:906" ph="{...}" />
+            <marker date="1553013070747" expanded="false" signature="6:196" ph="..." />
+            <marker date="1553013070747" expanded="true" signature="234:626" ph="{...}" />
+            <marker date="1553013070747" expanded="true" signature="263:624" ph="{...}" />
+            <marker date="1553013070747" expanded="true" signature="336:618" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Core/Providers/MerriamWebsterProvider.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="49">
-          <caret line="32" column="25" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
+        <state relative-caret-position="3504">
+          <caret line="174" selection-start-line="14" selection-end-line="174" />
           <folding>
-            <marker date="1552606145513" expanded="true" signature="6:242" ph="..." />
-            <marker date="1552606145513" expanded="true" signature="295:4850" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="359:4848" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="458:644" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="746:1276" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="850:1243" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="928:1189" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="1049:1171" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="1331:2258" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="1357:2170" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="1544:2156" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="1801:2088" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="2203:2248" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="2314:2926" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="2592:2649" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="2995:3319" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="3082:3281" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="3138:3267" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="3369:3611" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="3656:3868" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="3909:4222" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="4016:4184" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="4271:4842" ph="{...}" />
-            <marker date="1552606145513" expanded="true" signature="4641:4804" ph="{...}" />
+            <marker date="1552677469928" expanded="false" signature="6:242" ph="..." />
+            <marker date="1552677469928" expanded="true" signature="295:5436" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="359:5434" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="458:644" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="684:1234" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="850:1111" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="956:1065" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="1283:1346" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="1429:2844" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="1503:2746" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="1690:2732" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="2100:2509" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="2779:2834" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="2900:3512" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="3178:3235" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="3581:3905" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="3668:3867" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="3724:3853" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="3955:4197" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="4242:4454" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="4495:4808" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="4602:4770" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="4857:5428" ph="{...}" />
+            <marker date="1552677469928" expanded="true" signature="5227:5390" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/6950CCCF-CBA1-4361-A8EB-C50FB013CF48/dd/8c90946c/WebClient.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="9624">
+          <caret line="411" column="10" selection-start-line="411" selection-start-column="10" selection-end-line="411" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/TrainingSetProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="490">
+          <caret line="145" column="26" selection-start-line="145" selection-start-column="26" selection-end-line="145" selection-end-column="26" />
+          <folding>
+            <marker date="1553014350422" expanded="false" signature="6:119" ph="..." />
+            <marker date="1553014350422" expanded="true" signature="162:3977" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="210:3736" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="350:404" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="432:486" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="515:590" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="660:707" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="737:785" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="830:941" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="867:931" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="1023:2116" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="1167:1255" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="1306:1396" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="1575:1929" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="1976:2106" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="2172:2225" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="2288:2522" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="2386:2464" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="2576:2874" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="2731:2822" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="2920:3335" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="3066:3207" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="3417:3729" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="3523:3691" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="3614:3677" ph="{...}" />
+            <marker date="1553014350422" expanded="true" signature="3760:3975" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Core/Providers/LongmanProvider.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="176" column="30" selection-start-line="176" selection-start-column="30" selection-end-line="176" selection-end-column="30" />
+          <folding>
+            <marker date="1553015321726" expanded="false" signature="6:173" ph="..." />
+            <marker date="1553015321726" expanded="true" signature="226:6580" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="283:6578" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="375:541" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="581:1131" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="747:1008" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="853:962" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="1180:1243" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="1327:2782" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="1401:2684" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="1588:2670" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="2024:2612" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="2717:2772" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="2838:3324" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="2945:3002" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="3393:3717" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="3480:3679" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="3536:3665" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="3767:5331" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="3910:5203" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4045:5097" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4298:4773" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4403:4499" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4518:4615" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4658:4751" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4873:4956" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="4981:5079" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="5118:5189" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="5234:5293" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="5376:5618" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="5659:6023" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="5765:5936" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="6092:6572" ph="{...}" />
+            <marker date="1553015321726" expanded="true" signature="6371:6534" ph="{...}" />
           </folding>
         </state>
       </provider>

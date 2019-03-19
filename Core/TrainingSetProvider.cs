@@ -132,6 +132,24 @@ namespace SpeechMorphingDataGatherer.Core
                 param.complete[param.index] = true;
             }
         }
+        
+        protected List<string> FilterCount(List<string> urls, int count)
+        {
+            List<string> result = new List<string>();
+
+            foreach (string url in urls)
+            {
+                result.Add(url);
+
+                if (result.Count == count)
+                {
+                    break;
+                }
+            }
+
+            return result;
+        }
+
     }
 
     class SubTaskParam
