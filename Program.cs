@@ -17,7 +17,7 @@ namespace SpeechMorphingDataGatherer
             Application.EnableVisualStyles();
             FrmDownloadTrainingData frm = new FrmDownloadTrainingData();
 
-            frm.Provider = new CollinsProvider();
+            frm.Provider = new HowToPronounceProvider();
             frm.ShowDialog();
         }
     }

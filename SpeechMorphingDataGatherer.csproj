@@ -65,6 +65,7 @@
     <Compile Include="Core\Database\TrainingDataset.cs" />
     <Compile Include="Core\FFMPEG.cs" />
     <Compile Include="Core\Providers\CollinsProvider.cs" />
+    <Compile Include="Core\Providers\HowToPronounceProvider.cs" />
     <Compile Include="Core\Providers\LongmanProvider.cs" />
     <Compile Include="Core\Providers\MerriamWebsterProvider.cs" />
     <Compile Include="Core\TrainingSetProvider.cs" />
