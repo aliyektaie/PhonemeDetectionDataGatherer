@@ -6,4 +6,6 @@ obj/
 
 .idea/.idea.SpeechMorphingDataGatherer/.idea/.name
 .idea/.idea.SpeechMorphingDataGatherer/.idea/contentModel.xml
+.idea/.idea.SpeechMorphingDataGatherer/.idea/workspace.xml
 .vs/
+packages/
