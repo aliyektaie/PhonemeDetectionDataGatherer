@@ -8,6 +8,16 @@ namespace SpeechMorphingDataGatherer.Core
 {
     public class FFMPEG
     {
+        public static void ConvertAudioToWave(String input, String output, int freq)
+        {
+            String[] args = new String[]
+            {
+                "-i", input, "-acodec", "pcm_s16le", "-ac", "1", "-ar", freq.ToString(), output
+            };
+
+            RunFFMPEGWithParameters(args);
+        }
+        
         public static FFMPEGFileInfo GetFileInfo(string path)
         {
             String output = RunFFMPEGWithParameters(new String[] {"-i", path});

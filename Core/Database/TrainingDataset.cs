@@ -231,6 +231,11 @@ namespace SpeechMorphingDataGatherer.Core.Database
 
             return entry;
         }
+
+        public List<TrainingEntry> GetEntries()
+        {
+            return _content;
+        }
     }
 
     public class TrainingEntry
@@ -243,6 +248,8 @@ namespace SpeechMorphingDataGatherer.Core.Database
         public int ID { get; set; }
 
         public String Word { get; set; }
+        
+        public int AudioFileCount { get; set; }
 
         public String Phonetics { get; set; }
 
@@ -261,6 +268,11 @@ namespace SpeechMorphingDataGatherer.Core.Database
             file.AudioBitrateInKB = (int) info.BitRate;
 
             AudioFiles.Add(file);
+        }
+
+        public override string ToString()
+        {
+            return $"{Word}\t{Phonetics}\t{AudioFileCount}";
         }
     }
 
